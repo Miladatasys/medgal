@@ -1,0 +1,380 @@
+{% extends 'app/base.html'%}
+
+{% block contenido %}
+{% load static %}
+<div class="wrapper">
+    <!-- Page Content -->
+    <div id="content">
+        <!-- Top Navigation -->
+        <div class="container top-brand">
+            <nav class="navbar navbar-default">			
+                <div class="navbar-header">
+                    <div class="sidebar-header"> <a href="home.html"><img src="{% static 'app/images/Med.png' %}" class="logo" alt="logo"></a>
+                    </div>
+                </div>
+                <ul class="nav justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link">
+                            <span title="Fullscreen" class="ti-fullscreen fullscreen"></span>
+                        </a>							
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="modal" data-target=".proclinic-modal-lg">
+                            <span class="ti-search"></span>
+                        </a>
+                        <div class="modal fade proclinic-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-lorvens">
+                                <div class="modal-content proclinic-box-shadow2">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Buscar Paciente/Doctor:</h5>
+                                        <span class="ti-close" data-dismiss="modal" aria-label="Close">
+                                        </span>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <input type="text" class="form-control" id="search-term" placeholder="Type text here">
+                                                <button type="button" class="btn btn-lorvens proclinic-bg">
+                                                    <span class="ti-location-arrow"></span> Buscar</button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                         aria-expanded="false">
+                            <span class="ti-announcement"></span>
+                        </a>
+                        <div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
+                            <h5>Notificaciones</h5>
+                            <a class="dropdown-item" href="#">
+                                <span class="ti-wheelchair"></span> Nuevo paciente añadido</a>
+                            <a class="dropdown-item" href="#">
+                                <span class="ti-money"></span> Pago realizado de paciente</a>
+                            <a class="dropdown-item" href="#">
+                                <span class="ti-time"></span>Cita de paciente programada</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                         aria-expanded="false">
+                            <span class="ti-user"></span>
+                        </a>
+                        <div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
+                            <h5>Camila Morales</h5>
+                            <a class="dropdown-item" href="#">
+                                <span class="ti-settings"></span> Ajustes</a>
+                            <a class="dropdown-item" href="#">
+                                <span class="ti-help-alt"></span> Ayuda</a>
+                            <a class="dropdown-item" href="#">
+                                <span class="ti-power-off"></span> Salir</a>
+                        </div>
+                    </li>
+                </ul>
+        
+            </nav>
+        </div>
+        <!-- /Top Navigation -->
+        <!-- Menu -->
+        <div class="container menu-nav">
+            <nav class="navbar navbar-expand-lg proclinic-bg text-white">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="ti-menu text-white"></span>
+                </button>
+        
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown active">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                             aria-expanded="false"><span class="ti-home"></span> Dashboard</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                             aria-expanded="false"><span class="ti-wheelchair"></span> Pacientes</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="add-patient.html">Todos los Pacientes</a>
+                                <a class="dropdown-item" href="patients.html">Añadir Pacientes</a>
+                                <a class="dropdown-item" href="about-patient.html">Pacientes Detalles</a>
+                                <a class="dropdown-item" href="edit-patient.html">Editar Pacientes</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                             aria-expanded="false"><span class="ti-user"></span> Doctores</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="add-doctor.html">Todos los Doctor</a>
+                                <a class="dropdown-item" href="doctors.html">Añadir Doctores</a>
+                                <a class="dropdown-item" href="about-doctor.html">Doctores Detalles</a>
+                                <a class="dropdown-item" href="edit-doctor.html">Editar Doctores</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                             aria-expanded="false"><span class="ti-pencil-alt"></span> Citas médicas</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="add-appointment.html">Todas las Citas</a>
+                                <a class="dropdown-item" href="appointments.html">Añadir Cita</a>
+                                <a class="dropdown-item" href="about-appointment.html">Cita Detalles</a>
+                                <a class="dropdown-item" href="edit-appointment.html">Editar Citas</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                             aria-expanded="false"><span class="ti-money"></span> Pagos</a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="add-payment.html">Todos los Pagos</a>
+                                <a class="dropdown-item" href="payments.html">Añadir Pagos</a>
+                                <a class="dropdown-item" href="about-payment.html">Pagos Detalles</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="login.html">Ingresar </a>
+                                <a class="dropdown-item" href="sign-up.html">Registrarse</a>
+                                <a class="dropdown-item" href="faq.html">Contacto</a>
+                                <a class="dropdown-item" href="invoice.html">Pagos</a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <!-- /Menu -->
+        <!-- Breadcrumb -->
+        <!-- Page Title -->
+        <div class="container mt-0">
+            <div class="row breadcrumb-bar">
+                <div class="col-md-6">
+                    <h3 class="block-title">Estadísticas rápidas</h3>
+                </div>
+                <div class="col-md-6">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">
+                                <span class="ti-home"></span>
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active">Dashboard</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <!-- /Page Title -->
+        <!-- /Breadcrumb -->
+        <!-- Main Content -->
+        <div class="container home">
+            <div class="row">
+                <!-- Widget Item -->
+                <div class="col-md-4">
+                    <div class="widget-area proclinic-box-shadow color-red">
+                        <div class="widget-left">
+                            <span class="ti-user"></span>
+                        </div>
+                        <div class="widget-right">
+                            <h4 class="wiget-title">Pacientes</h4>
+                            <span class="numeric color-red">348</span>
+                            <p class="inc-dec mb-0"><span class="ti-angle-up"></span> +20% Aumento</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+                <!-- Widget Item -->
+                <div class="col-md-4">
+                    <div class="widget-area proclinic-box-shadow color-green">
+                        <div class="widget-left">
+                            <span class="ti-bar-chart"></span>
+                        </div>
+                        <div class="widget-right">
+                            <h4 class="wiget-title">Citas</h4>
+                            <span class="numeric color-green">1585</span>
+                            <p class="inc-dec mb-0"><span class="ti-angle-down"></span> -15% Descenso</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+                <!-- Widget Item -->
+                <div class="col-md-4">
+                    <div class="widget-area proclinic-box-shadow color-yellow">
+                        <div class="widget-left">
+                            <span class="ti-money"></span>
+                        </div>
+                        <div class="widget-right">
+                            <h4 class="wiget-title">Ingreso total</h4>
+                            <span class="numeric color-yellow">$736000</span>
+                            <p class="inc-dec mb-0"><span class="ti-angle-up"></span> +10% Aumento</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+            </div>
+
+            <div class="row">
+                <!-- Widget Item -->
+                <div class="col-md-6">
+                    <div class="widget-area-2 proclinic-box-shadow">
+                        <h3 class="widget-title">Citas por año</h3>
+                        <div id="lineMorris" class="chart-home"></div>
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+                <!-- Widget Item -->
+                <div class="col-md-6">
+                    <div class="widget-area-2 proclinic-box-shadow">
+                        <h3 class="widget-title"> Pacientes por año</h3>
+                        <div id="barMorris" class="chart-home"></div>
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+            </div>
+
+            <div class="row">
+                <!-- Widget Item -->
+                <div class="col-md-12">
+                    <div class="widget-area-2 proclinic-box-shadow">
+                        <h3 class="widget-title">Citas</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nombre paciente</th>
+                                        <th>Doctor</th>
+                                        <th>Recepción del paciente</th>
+                                        <th>Fecha</th>
+                                        <th>Hora</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ramón</td>
+                                        <td>Manoj</td>
+                                        <td>Dental</td>
+                                        <td>12-10-2022</td>
+                                        <td>12:10PM</td>
+                                        <td>
+                                            <span class="badge badge-success">Completo</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rita</td>
+                                        <td>Daniel </td>
+                                        <td>Ortho</td>
+                                        <td>12-10-2022</td>
+                                        <td>1:10PM</td>
+                                        <td>
+                                            <span class="badge badge-warning">Pendiente</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Silvia</td>
+                                        <td>Martin </td>
+                                        <td>Ortho</td>
+                                        <td>12-10-2022</td>
+                                        <td>1:30PM</td>
+                                        <td>
+                                            <span class="badge badge-danger">Cancelado</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Cristina</td>
+                                        <td>Kumar</td>
+                                        <td>Dental</td>
+                                        <td>12-10-2018</td>
+                                        <td>12:10PM</td>
+                                        <td>
+                                            <span class="badge badge-success">Completo</span>
+                                        </td>
+                                    </tr>
+                                        <td>
+                                            <span class="badge badge-danger">Cancelado</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+            </div>
+
+            <div class="row">
+                <!-- Widget Item -->
+                <div class="col-sm-6">
+                    <div class="widget-area-2 proclinic-box-shadow">
+                        <h3 class="widget-title">Estado de citas</h3>
+                        <div id="donutMorris" class="chart-home"></div>
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+                <!-- Widget Item -->
+                <div class="col-md-6">
+                    <div class="widget-area-2 progress-status proclinic-box-shadow">
+                        <h3 class="widget-title">Disponibilidad doctores</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Doctor</th>
+                                        <th>Specialidad</th>
+                                        <th>Disponibilidad</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>Ramón</td>
+                                        <td>Dental</td>
+                                        <td>
+                                            <span class="badge badge-success">Activo</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rita</td>
+                                        <td>Ortho</td>
+                                        <td>
+                                            <span class="badge badge-warning">Con permiso</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Silvia</td>
+                                        <td>Piel</td>
+                                        <td>
+                                            <span class="badge badge-danger">No disponible</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ramón</td>
+                                        <td>Dental</td>
+                                        <td>
+                                            <span class="badge badge-success">Activo</span>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+
+            </div>
+
+        </div>
+        <!-- /Main Content -->
+        <!--Copy Rights-->
+        <div class="container">
+            <div class="d-sm-flex justify-content-center">
+              <span class="text-muted text-center d-block d-sm-inline-block">Copyright © 2022 <a href="" target="_blank">Medgal Salud</a>. Todos los derechos reservados.</span>
+            </div>
+        </div>
+        <!-- /Copy Rights-->
+    </div>
+    <!-- /Page Content -->
+</div>
+
+
+{% endblock %}
+

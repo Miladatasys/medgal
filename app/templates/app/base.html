@@ -1,0 +1,60 @@
+
+
+<!DOCTYPE html>
+
+<html>
+
+
+<!-- Mirrored from www.konnectplugins.com/proclinic/Horizontal/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 24 Jan 2022 10:41:58 GMT -->
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Medgal Salud Centro Médico</title>
+    {% load static %}
+	<!-- Fav  Icon Link -->
+	<link rel="fav" type="images/fav.png" href="{% static 'app/images/fav.png' %}">
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="{% static 'app/css/bootstrap.min.css' %}">
+	<!-- themify icons CSS -->
+	<link rel="stylesheet" href="{% static 'app/css/themify-icons.css' %}">
+	<!-- Animations CSS -->
+	<link rel="stylesheet" href="{% static 'app/css/animate.css' %}">
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="{% static 'app/css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'app/css/green.css' %}">
+	<link rel="stylesheet" href="{% static 'app/css/responsive.css' %}">
+	<!-- morris charts -->
+	<link rel="stylesheet" href="{% static 'app/charts/css/morris.css' %}">
+	<!-- jvectormap -->
+	<link rel="stylesheet" href="{% static 'app/css/jquery-jvectormap.css' %}">
+
+
+	<script src="{% static 'app/js/modernizr.min.js' %}"></script>
+</head>
+
+<body>
+
+    <div id="contenido">
+        {% block contenido %}
+        {% endblock %}
+        
+    </div>
+
+	<!-- Jquery Library-->
+	<script src="{% static 'app/js/jquery-3.2.1.min.js' %}"></script>
+	<!-- Popper Library-->
+	<script src="{% static 'app/js/popper.min.js' %}"></script>
+	<!-- Bootstrap Library-->
+	<script src="{% static 'app/js/bootstrap.min.js' %}"></script>
+	<!-- morris charts -->
+	<script src="{% static 'app/charts/js/raphael-min.js' %}"></script>
+	<script src="{% static 'app/charts/js/morris.min.js' %}"></script>
+	<script src="{% static 'app/js/custom-morris.js' %}"></script>
+
+	<!-- Custom Script-->
+	<script src="{% static 'app/js/custom.js' %}"></script>
+</body>
+
+
+</html>
