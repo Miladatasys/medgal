@@ -88,57 +88,21 @@
         
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown active">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+ 
+                            <a class="nav-link " data-toggle="dropdown" href="{% url 'home' %} "role="button" aria-haspopup="true"
                              aria-expanded="false"><span class="ti-home"></span> Dashboard</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                             aria-expanded="false"><span class="ti-wheelchair"></span> Pacientes</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="add-patient.html">Todos los Pacientes</a>
-                                <a class="dropdown-item" href="patients.html">Añadir Pacientes</a>
-                                <a class="dropdown-item" href="about-patient.html">Pacientes Detalles</a>
-                                <a class="dropdown-item" href="edit-patient.html">Editar Pacientes</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+
+                             <a class="nav-link " href="{% url 'pacientes' %}" role="button" aria-haspopup="true"
+                             aria-expanded="false"><span class="ti-user"></span> Pacientes</a>
+
+                             <a class="nav-link " href="{% url 'doctores' %}" role="button" aria-haspopup="true"
                              aria-expanded="false"><span class="ti-user"></span> Doctores</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="add-doctor.html">Todos los Doctor</a>
-                                <a class="dropdown-item" href="doctors.html">Añadir Doctores</a>
-                                <a class="dropdown-item" href="about-doctor.html">Doctores Detalles</a>
-                                <a class="dropdown-item" href="edit-doctor.html">Editar Doctores</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                             aria-expanded="false"><span class="ti-pencil-alt"></span> Citas médicas</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="add-appointment.html">Todas las Citas</a>
-                                <a class="dropdown-item" href="appointments.html">Añadir Cita</a>
-                                <a class="dropdown-item" href="about-appointment.html">Cita Detalles</a>
-                                <a class="dropdown-item" href="edit-appointment.html">Editar Citas</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                             aria-expanded="false"><span class="ti-money"></span> Pagos</a>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="add-payment.html">Todos los Pagos</a>
-                                <a class="dropdown-item" href="payments.html">Añadir Pagos</a>
-                                <a class="dropdown-item" href="about-payment.html">Pagos Detalles</a>
-                            </div>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="login.html">Ingresar </a>
-                                <a class="dropdown-item" href="sign-up.html">Registrarse</a>
-                                <a class="dropdown-item" href="faq.html">Contacto</a>
-                                <a class="dropdown-item" href="invoice.html">Pagos</a>
-                            </div>
-                        </li>
+
+                             <a class="nav-link " href="{% url 'citas' %}" role="button" aria-haspopup="true"
+                             aria-expanded="false"><span class="ti-user"></span> Citas</a>
+
+                             <a class="nav-link " href="{% url 'pagos' %}" role="button" aria-haspopup="true"
+                             aria-expanded="false"><span class="ti-dollar"></span> Pagos</a>
                     </ul>
                 </div>
             </nav>

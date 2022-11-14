@@ -16,3 +16,4 @@ def citas(request):
 
 def pagos(request):
     return render(request, 'app/pagos.html')
+    

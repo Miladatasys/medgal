@@ -1,0 +1,245 @@
+{% extends 'app/base.html' %}
+<div class="wrapper">
+    <!-- Page Content -->
+    <div id="content">
+            <!-- Top Navigation -->
+            {% block contenido %}
+            {% load static %}
+            <div class="container top-brand">
+                <nav class="navbar navbar-default">			
+                    <div class="navbar-header">
+                        <div class="sidebar-header"> <a href="home.html"><img src="{% static 'app/images/Med.png' %}" class="logo" alt="logo"></a>
+                        </div>
+                    </div>
+                    <ul class="nav justify-content-end">
+                        <li class="nav-item">
+                            <a class="nav-link">
+                                <span title="Fullscreen" class="ti-fullscreen fullscreen"></span>
+                            </a>							
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-toggle="modal" data-target=".proclinic-modal-lg">
+                                <span class="ti-search"></span>
+                            </a>
+                            <div class="modal fade proclinic-modal-lg" tabindex="-1" role="dialog" aria-hidden="true">
+                                <div class="modal-dialog modal-lorvens">
+                                    <div class="modal-content proclinic-box-shadow2">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Buscar Paciente/Doctor:</h5>
+                                            <span class="ti-close" data-dismiss="modal" aria-label="Close">
+                                            </span>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form>
+                                                <div class="form-group">
+                                                    <input type="text" class="form-control" id="search-term" placeholder="Type text here">
+                                                    <button type="button" class="btn btn-lorvens proclinic-bg">
+                                                        <span class="ti-location-arrow"></span> Buscar</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                             aria-expanded="false">
+                                <span class="ti-announcement"></span>
+                            </a>
+                            <div class="dropdown-menu proclinic-box-shadow2 notifications animated flipInY">
+                                <h5>Notificaciones</h5>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-wheelchair"></span> Nuevo paciente añadido</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-money"></span> Pago realizado de paciente</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-time"></span>Cita de paciente programada</a>
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                             aria-expanded="false">
+                                <span class="ti-user"></span>
+                            </a>
+                            <div class="dropdown-menu proclinic-box-shadow2 profile animated flipInY">
+                                <h5>Camila Morales</h5>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-settings"></span> Ajustes</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-help-alt"></span> Ayuda</a>
+                                <a class="dropdown-item" href="#">
+                                    <span class="ti-power-off"></span> Salir</a>
+                            </div>
+                        </li>
+                    </ul>
+            
+                </nav>
+            </div>
+            <!-- /Top Navigation -->
+            <!-- Menu -->
+            <div class="container menu-nav">
+                <nav class="navbar navbar-expand-lg proclinic-bg text-white">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="ti-menu text-white"></span>
+                    </button>
+            
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+     
+                                <a class="nav-link " data-toggle="dropdown" href="{% url 'home' %} "role="button" aria-haspopup="true"
+                                 aria-expanded="false"><span class="ti-home"></span> Dashboard</a>
+    
+                                 <a class="nav-link " href="{% url 'pacientes' %}" role="button" aria-haspopup="true"
+                                 aria-expanded="false"><span class="ti-user"></span> Pacientes</a>
+    
+                                 <a class="nav-link " href="{% url 'doctores' %}" role="button" aria-haspopup="true"
+                                 aria-expanded="false"><span class="ti-user"></span> Doctores</a>
+    
+                                 <a class="nav-link " href="{% url 'citas' %}" role="button" aria-haspopup="true"
+                                 aria-expanded="false"><span class="ti-user"></span> Citas</a>
+    
+                                 <a class="nav-link " href="{% url 'pagos' %}" role="button" aria-haspopup="true"
+                                 aria-expanded="false"><span class="ti-dollar"></span> Pagos</a>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+            <!-- /Menu -->
+            <!-- Breadcrumb -->
+            <!-- Page Title -->
+            <div class="container mt-0">
+                <div class="row breadcrumb-bar">
+                    <div class="col-md-6">
+                        <h3 class="block-title">Pacientes</h3>
+                    </div>
+                    <div class="col-md-6">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <a href="index.html">
+                                    <span class="ti-home"></span>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item">Pacientes</li>
+                            <li class="breadcrumb-item active">Todos los pacientes</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        <!-- /Page Title -->
+
+        <!-- /Breadcrumb -->
+        <!-- Main Content -->
+        <div class="container">
+
+            <div class="row">
+                <!-- Widget Item -->
+                <div class="col-md-12">
+                    <div class="widget-area-2 proclinic-box-shadow">
+                        <h3 class="widget-title"> Lista</h3>							
+                        <div class="table-responsive mb-3">
+                            <table id="tableId" class="table table-bordered table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="no-sort">
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="select-all">
+                                                <label class="custom-control-label" for="select-all"></label>
+                                            </div>
+                                        </th>
+                                        <th> Rut</th>
+                                        <th> Nombre</th>
+                                        <th>Edad</th>
+                                        <th>Celular</th>
+                                        <th>Última visita</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="1">
+                                                <label class="custom-control-label" for="1"></label>
+                                            </div>
+                                        </td>
+                                        <td>19.824.987-9</td>
+                                        <td>Richard</td>
+                                        <td>30</td>
+                                        <td>333-444-7777</td>
+                                        <td>12-03-2022</td>
+                                        <td>
+                                            <span class="badge badge-success">Completado</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="2">
+                                                <label class="custom-control-label" for="2"></label>
+                                            </div>
+                                        </td>
+                                        <td>25.896.432-2</td>
+                                        <td>Reila </td>
+                                        <td>26</td>
+                                        <td>3423-232-987</td>
+                                        <td>12-10-2018</td>
+                                        <td>
+                                            <span class="badge badge-warning">Pendiente</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="custom-control custom-checkbox">
+                                                <input class="custom-control-input" type="checkbox" id="3">
+                                                <label class="custom-control-label" for="3"></label>
+                                            </div>
+                                        </td>
+                                        <td>12.345.564-7</td>
+                                        <td>Paul</td>
+                                        <td>46</td>
+                                        <td>3423-132-987</td>
+                                        <td>45-10-2022</td>
+                                        <td>
+                                            <span class="badge badge-danger">Cancelado</span>
+                                        </td>
+                                    </tr>
+
+                                  
+                                </tbody>
+                            </table>
+                            <!--Export links-->
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination justify-content-center export-pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><span class="ti-download"></span> csv</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><span class="ti-printer"></span>  imprimir</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><span class="ti-file"></span> PDF</a>
+                                    </li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#"><span class="ti-align-justify"></span> Excel</a>
+                                    </li>
+                                </ul>
+                            </nav>
+                            <!-- /Export links-->
+                            <button type="button" class="btn btn-danger mt-3 mb-0"><span class="ti-trash"></span> Eliminar</button>
+                            <button type="button" class="btn btn-primary mt-3 mb-0"><span class="ti-pencil-alt"></span> Editar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- /Widget Item -->
+            </div>
+        </div>
+        <!-- /Main Content -->
+        <!-- /Copy Rights-->
+    </div>
+    <!-- /Page Content -->
+</div>
+
+{% endblock %}
+
